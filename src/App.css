@@ -35,15 +35,6 @@
   width: 100%;
   height: 100%;
   display: flex;
-}
-
-.github-icon:hover {
-  opacity: 1.0;
-}
-
-.github-icon {
-  width: 21px;
-  height: 21px;
   opacity: 0.5;
 }
 
@@ -52,14 +43,33 @@
   width: 100%;
   height: 100%;
   display: flex;
+  opacity: 0.5;
 }
 
-.devpost-icon:hover {
+.linkedin {
+  background: url('./assets/linkedin.svg');
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0.5;
+}
+
+.linkedin:hover {
   opacity: 1.0;
 }
 
-.devpost-icon {
-  width: 21px;
-  height: 21px;
-  opacity: 0.5;
+.devpost:hover {
+  opacity: 1.0;
+}
+
+.github:hover {
+  opacity: 1.0;
+}
+
+.ul{
+  width: 20px;
+}
+
+.li {
+  display: inline-block;
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import './App.css';
 
 class App extends Component {
@@ -13,15 +14,18 @@ class App extends Component {
             Computer Engineering Student at the<br>
             </br>University of Waterloo
           </p>
-          <div class="github-icon">
-            <a href="https://github.com/nicholasc861">
+          <div class="icons">
+            <ul>
+            <li><a href="https://github.com/nicholasc861" target="_blank">
               <svg class="github"></svg>
-            </a>
-          </div>
-          <div class="devpost-icon">
-            <a href="https://devpost.com/nicholasc861">
+            </a></li>
+            <li><a href="https://devpost.com/nicholasc861" target="_blank">
               <svg class="devpost"></svg>
-            </a>
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/nicholaschunghun" target="_blank">
+              <svg class="linkedin"></svg>
+            </a></li>
+            </ul>
           </div>
         </div>
       </header>
