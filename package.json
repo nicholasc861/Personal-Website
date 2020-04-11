@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
-  "homepage": "http://nicholaschung-hun.me",
+  "homepage": "https://nicholasc861.github.io/Personal-Website/",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.0",
