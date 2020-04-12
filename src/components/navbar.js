@@ -12,26 +12,29 @@ const StyledNavbar = styled(Navbar)`
     height: 3 rem;
     display: flex;
     flex-direction: row;
-
 `
 const Transition = styled.div`
     .active {
         visibility: visible;
-        transition: all 200ms ease-in;
+        transition: all 300ms ease-in;
     }
     .hidden {
         visibility: hidden;
-        transition: all 200ms ease-out;
+        transition: all 300ms ease-out;
         transform: translate(0, -100%)
     }
+`
+
+const Navig = styled(Nav)`
+    width: 100%
+
 `
 
 export default class NavigationBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: true,
-            scrollPos: 0
+            show: false,
         }
 
         this.handleScroll = this.handleScroll.bind(this)
@@ -59,10 +62,8 @@ export default class NavigationBar extends React.Component {
     }
 
     handleScroll() {
-        const scrollPos = this.state.scrollPos
         this.setState({
-            scrollPos: document.body.getBoundingClientRect().top,
-            show: document.body.getBoundingClientRect().top > scrollPos
+            show: window.scrollY > 0
         })
     }
 
@@ -78,11 +79,14 @@ export default class NavigationBar extends React.Component {
 
         return (
             <Transition>
-                <StyledNavbar className={this.state.show ? "active" : "hidden"}>
+                <StyledNavbar expand="lg" variant="dark" className={this.state.show ? "active" : "hidden"}>
                     <Navbar.Brand href={brand.to}>{brand.name}</Navbar.Brand>
-                        <Nav>
+                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                    <Navbar.Collapse id="responsive-navbar-nav">
+                        <Navig className="justify-content-end">
                             <NavLinks />
-                        </Nav>
+                        </Navig>
+                        </Navbar.Collapse>
                 </StyledNavbar>
             </Transition>
         )
