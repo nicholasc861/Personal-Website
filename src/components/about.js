@@ -3,7 +3,7 @@ import { Container, Col, Row } from "react-bootstrap"
 import styled from "styled-components"
 
 const About = styled.div`
-    padding-top: 150px;
+    padding: 150px 0px;
 `
 
 export default class AboutSection extends React.Component {
@@ -22,9 +22,9 @@ export default class AboutSection extends React.Component {
                                 <p className="aboutSection">
                                     I am currently a first-year Computer Engineering student
                                     <br />
-                                    at the University of Waterloo. I've always had a passion
+                                    at the University of Waterloo.
                                     <br />
-                                    for technology and can be found...
+                                    
                                 </p>
                             </div>
                         </Col>

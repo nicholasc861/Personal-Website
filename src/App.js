@@ -14,7 +14,7 @@ const navlinks = [
   { name: "Contact", to: "#contact" }
 ]
 
-const brand = { name: "test", to: "" }
+const brand = { name: "test", to: "#" }
 
 class App extends Component {
   render() {
