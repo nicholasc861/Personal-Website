@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import Hero from "./components/hero"
 import NavigationBar from "./components/navbar"
 import AboutSection from "./components/about"
+import Projects from "./components/projects"
+import Contact from "./components/contact"
 import PageWrapper from "./components/PageWrapper"
 
 import './App.css';
@@ -14,7 +16,7 @@ const navlinks = [
   { name: "Contact", to: "#contact" }
 ]
 
-const brand = { name: "test", to: "#" }
+const brand = { name: "NC", to: "#" }
 
 class App extends Component {
   render() {
@@ -23,6 +25,8 @@ class App extends Component {
         <NavigationBar brand={brand} links={navlinks} />
         <Hero id="" />
         <AboutSection />
+        <Projects />
+        <Contact />
       </PageWrapper>
     );
   }

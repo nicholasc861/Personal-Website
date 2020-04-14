@@ -10,23 +10,11 @@
 
 .hero-content {
   top: 30%;
+  padding-left: 20px;
 }
 
-
-.title {
-  font-size: 55px;
-  font-weight: 600;
-  font-family: 'Montserrat', sans-serif;
-  color: #F1FFE7;
-  
-}
-
-.subtitle {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
-  font-weight: 500;
-  color: #F1FFE7;
-  opacity: 0.9;
+.heading {
+  padding: 0px;
 }
 
 .github {
