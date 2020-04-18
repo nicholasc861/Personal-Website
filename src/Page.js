@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 // Component Imports
 import Hero from "./components/hero"
@@ -18,7 +19,7 @@ const navlinks = [
 
 const brand = { name: "NC", to: "#" }
 
-class App extends Component {
+class Page extends Component {
   render() {
     return (
       <PageWrapper>
@@ -32,4 +33,5 @@ class App extends Component {
   }
 }
 
-export default App;
+ReactDOM.render(<Page />, document.getElementById('root'));
+
