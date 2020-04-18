@@ -45,9 +45,10 @@ export default class Hero extends React.Component {
                             <Subtitle>
                                 A&nbsp;
                                 <TextLoop>
-                                    <span>COMPUTER ENGINEERING STUDENT 🎓</span>
+                                    <span>COMPUTER ENGINEERING STUDENT 👨‍🎓</span>
                                     <span>TRAVEL ENTHUSIAST ✈️</span>
                                     <span>SNEAKER COLLECTOR 👟</span>
+                                    <span>FOOD CONNOISSEUR 🍣</span>
                                 </TextLoop>
                             </Subtitle>
                         </Col>

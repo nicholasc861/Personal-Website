@@ -8,7 +8,7 @@ import Projects from "./components/projects"
 import Contact from "./components/contact"
 import PageWrapper from "./components/PageWrapper"
 
-import './App.css';
+import './Page.css';
 
 const navlinks = [
   { name: "Projects", to: "#projects" },

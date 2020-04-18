@@ -1,5 +1,6 @@
 import React from "react"
 import { Helmet } from "react-helmet"
+import favicon from "../assets/favicon.png"
 
 export default class PageWrapper extends React.Component {
     render() {
@@ -13,7 +14,7 @@ export default class PageWrapper extends React.Component {
                     <meta property="og:title" content="Nicholas Chung-Hun's Personal Website" />
                     <meta property="og:url" content="https://nicholaschung-hun.me" />
                     
-                    <link rel="shortcut icon" type="image/png" href="" />
+                    <link rel="icon" type="image/png" href={favicon} />
 
                     <title>Nicholas Chung-Hun</title>
                 </Helmet>

@@ -3,15 +3,19 @@ import {Navbar, Nav} from "react-bootstrap"
 import styled from "styled-components"
 import PropTypes from "prop-types"
 
+import Logo from "../assets/logo.svg"
+
 const StyledNavbar = styled(Navbar)`
     position: fixed;
     top: 0;
     left: 0;
-    padding: 10px 50px;
+    padding: 10px 120px;
     width: 100%;
     margin: 0 auto;
     height: 3 rem;
     display: flex;
+    z-index: 10;
+    font-weight: 600;
     flex-direction: row;
 `
 const Transition = styled.div`
@@ -80,8 +84,15 @@ export default class NavigationBar extends React.Component {
 
         return (
             <Transition>
-                <StyledNavbar expand="lg" variant="dark" className={this.state.show ? "active" : "hidden"}>
-                    <Navbar.Brand href={brand.to}>{brand.name}</Navbar.Brand>
+                <StyledNavbar expand="lg" bg="light" variant="light" className={this.state.show ? "active" : "hidden"}>
+                    <Navbar.Brand href={brand.to}>
+                        <img 
+                            src={Logo} 
+                            width="40" 
+                            height="40"
+                            className="d-inline-block align-top"
+                            alt="logo" />
+                    </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Navig className="justify-content-end">
