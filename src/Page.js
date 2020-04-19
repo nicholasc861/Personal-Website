@@ -11,8 +11,8 @@ import Contact from "./components/contact"
 import PageWrapper from "./components/PageWrapper"
 
 const GlobalStyle = createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css?family=Karla&display=swap')
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap')
+    @import url('https://fonts.googleapis.com/css?family=Karla&display=swap');
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap');
 
     body {
       margin: 0;
