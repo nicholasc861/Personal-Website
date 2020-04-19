@@ -76,7 +76,7 @@ export default class NavigationBar extends React.Component {
         const { brand, links } = this.props;
         const NavLinks = () =>
             links.map((link, index) => (
-                <Nav.Link key={index} href={link.to}>
+                <Nav.Link eventKey={index} active={false} href={link.to}>
                     {link.name}
                 </Nav.Link>
             ))
@@ -88,8 +88,8 @@ export default class NavigationBar extends React.Component {
                     <Navbar.Brand href={brand.to}>
                         <img 
                             src={Logo} 
-                            width="40" 
-                            height="40"
+                            width="35" 
+                            height="35"
                             className="d-inline-block align-top"
                             alt="logo" />
                     </Navbar.Brand>

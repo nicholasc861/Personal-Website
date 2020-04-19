@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { createGlobalStyle } from 'styled-components'
 
 // Component Imports
 import Hero from "./components/hero"
@@ -9,7 +10,20 @@ import Projects from "./components/projects"
 import Contact from "./components/contact"
 import PageWrapper from "./components/PageWrapper"
 
-import './Page.css';
+const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css?family=Karla&display=swap')
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:500,600,700&display=swap')
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+`
 
 const navlinks = [
   { name: "Projects", to: "#projects" },
@@ -23,6 +37,7 @@ class Page extends Component {
   render() {
     return (
       <PageWrapper>
+        <GlobalStyle />
         <NavigationBar brand={brand} links={navlinks} />
         <Hero id="" />
         <AboutSection />

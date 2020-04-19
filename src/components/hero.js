@@ -1,8 +1,16 @@
 import React from "react"
 import TextLoop from "react-text-loop"
-import {Container, Row, Col} from "react-bootstrap"
+import { Container, Row, Col, Image } from "react-bootstrap"
 
 import styled from "styled-components"
+
+import HeroBackground from "../assets/background.jpg"
+import Github from "../assets/github.svg"
+import Devpost from "../assets/devpost.svg"
+import Linkedin from "../assets/linkedin.svg"
+import Resume from "../assets/resume.svg"
+import Email from "../assets/email.svg"
+
 
 const Name = styled.div`
     font-size: 45px;
@@ -28,14 +36,44 @@ const Greeting = styled.div`
     color: #FDFFFC;
 `
 
+const HeroContent = styled(Col)`
+    top: 30%;
+    padding-left: 20px;
+`
+
+const HeroHeader = styled.header`
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(${HeroBackground});
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+`
+
+const Icons = styled.div`
+    margin-top: 5px
+`
+
+const Icon = styled(Image)`
+    width: 18px;
+    height: 18px;
+    opacity: 0.5;
+    margin-right: 10px;
+    
+    &:hover {
+        opacity: 1.0;
+    }
+`
+
 export default class Hero extends React.Component {
     render(){
         return (
-            <header className="hero">
+            <HeroHeader>
                 <Container>
                     <Row>
                         <Col lg={5}></Col>
-                        <Col lg={7} className="hero-content">
+                        <HeroContent lg={7}>
                             <Greeting>
                                 HEY THERE!
                             </Greeting>
@@ -51,10 +89,27 @@ export default class Hero extends React.Component {
                                     <span>FOOD CONNOISSEUR 🍣</span>
                                 </TextLoop>
                             </Subtitle>
-                        </Col>
+                            <Icons>
+                                <a href="mailto:nicholas.schunghun@gmail.com" target="_top" >
+                                    <Icon src={Email} />
+                                </a>
+                                <a href="blank" target="_blank" >
+                                    <Icon src={Resume} />
+                                </a>
+                                <a href="https://github.com/nicholasc861" target="_blank">
+                                    <Icon src={Github} />
+                                </a>
+                                <a href="https://devpost.com/nicholasc861" target="_blank">
+                                    <Icon src={Devpost} />
+                                </a>
+                                <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_blank">
+                                    <Icon src={Linkedin} />
+                                </a>
+                            </Icons>
+                        </HeroContent>
                     </Row>
                 </Container>
-            </header>
+            </HeroHeader>
         )
     }
 }

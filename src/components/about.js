@@ -1,9 +1,12 @@
 import React from "react"
-import { Container, Col, Row, Button } from "react-bootstrap"
+import { Container, Col, Row, Button, Image } from "react-bootstrap"
 import styled from "styled-components"
+
+import aboutPhoto from "../assets/aboutPhoto.jpg"
 
 const About = styled.div`
     padding: 100px 0px;
+    background-color: #F9F9F9;
 
 `
 
@@ -11,7 +14,7 @@ const AboutInfo = styled.div`
     font-family: "Montserrat", sans-serif;
     font-size: 15px;
     margin: 20px;
-    margin-right: 40px;
+    margin-left: 120px;
     color: #434854;
 `
 
@@ -21,11 +24,15 @@ const Greeting = styled.div`
     font-size: 25px;
 `
 
-const Resume = styled(Button)`
+const AboutPhoto = styled(Image)`
+    width: 300px;
+    height: 300px;
+    align-self: center;
     margin: 20px;
-`
+    margin-right: 120px;
+    margin-left: auto;
+    display: block;
 
-const Contact = styled(Button)`
 `
 
 export default class AboutSection extends React.Component {
@@ -46,11 +53,13 @@ export default class AboutSection extends React.Component {
                                 I've always loved technology and often find myself
                                 browsing new phone releases and technological advancements.
                                 Recently, I've been learning Go and building web apps with react.
+                                <br />
+                                <br />
+                                Let's Chat!
                             </AboutInfo>
-                            <Resume variant="dark">Resume</Resume>
-                            <Contact variant="dark">Contact Me</Contact>
                         </Col>
                         <Col lg={5}>
+                            <AboutPhoto src={aboutPhoto} roundedCircle />
                         </Col>
                     </Row>
                 </Container>
