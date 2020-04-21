@@ -1,9 +1,11 @@
-import React from "react"
+import React, { useState } from "react"
 
+import { Card, Image } from 'react-bootstrap'
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-
 import styled from "styled-components"
+
+import 'react-multi-carousel/lib/styles.css';
+import Slackoff from '../assets/Projects/Slackoff.png'
 
 const Title = styled.div`
     font-family: "Montserrat", sans-serif;
@@ -11,6 +13,36 @@ const Title = styled.div`
     font-weight: 800;
     text-align: center;
     padding: 20px 0px;
+`
+
+const ProjectDetails = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #97D2FB;
+`
+
+const ProjectCard = styled.div`
+    background-image: url(${props => props.imageSrc});
+    background-size: cover;
+    height: 300px;
+    width: 300px;
+    margin: auto;
+
+    &:hover {
+      ${ProjectDetails} {
+        opacity: 0.25;
+      }
+    }
+`
+
+const ProjectCarousel = styled(Carousel)`
+    margin: 0px 200px;
+    text-align: center;
+    text-decoration: none;
 
 `
 
@@ -34,18 +66,33 @@ const responsive = {
     }
   };
 
-export default class Projects extends React.Component {
-    render(){
-        return(
-            <div>
-                <Title>MY PORTFOLIO</Title>
-                <Carousel responsive={responsive} infinite={true}>
-                    <div>Item 1</div>
-                    <div>Item 2</div>
-                    <div>Item 3</div>
-                    <div>Item 4</div>
-                </Carousel>
-            </div>
-        )
-    }
+const Projects = () => {
+  const [showArrows, setArrow] = useState(false)
+
+  return(
+      <div onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
+          <Title>MY PORTFOLIO</Title>
+            <ProjectCarousel responsive={responsive} arrows={showArrows} renderButtonGroupOutside={true} infinite={true}>
+                <a href="https://github.com/nicholasc861/SlackOff" target="_blank" >
+                  <ProjectCard imageSrc={Slackoff}>
+                    <ProjectDetails>
+                      SlackOff
+                    </ProjectDetails>
+                  </ProjectCard>
+                </a>
+                <a href="http://google.com">
+                  <ProjectCard src={Slackoff} />
+                </a>
+                <a href="http://google.com">
+                  <ProjectCard src={Slackoff} />
+                </a>
+                <a href="http://google.com">
+                  <ProjectCard src={Slackoff} />
+                </a>
+            </ProjectCarousel>
+      </div>
+  )
+    
 }
+
+export default Projects
