@@ -24,7 +24,9 @@ const ProjectDetails = styled.div`
     opacity: 0;
     transition: .5s ease;
     font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
     background-color: #97D2FB;
+    color: black;
 `
 
 const ProjectCard = styled.div`
@@ -36,7 +38,7 @@ const ProjectCard = styled.div`
 
     &:hover {
       ${ProjectDetails} {
-        opacity: 0.25;
+        opacity: 0.4;
       }
     }
 `
@@ -72,13 +74,18 @@ const Projects = () => {
   const [showArrows, setArrow] = useState(false)
 
   return(
-      <div id="#projects" onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
+      <div id="projects" onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
           <Title>MY PORTFOLIO</Title>
             <ProjectCarousel responsive={responsive} arrows={showArrows} renderButtonGroupOutside={true} infinite={true}>
                 <a href="https://github.com/nicholasc861/SlackOff" target="_blank" >
                   <ProjectCard imageSrc={Slackoff}>
                     <ProjectDetails>
                       SlackOff
+                      <br />
+                      <br />
+                      Our Slack app allows for users to send messages to any phone number that supports SMS capabilities. 
+                      This allows users to connect with offline members quickly. The offline user is also able to send a 
+                      SMS to a dedicated phone number which is then automatically forwarded to the Slack channel.
                     </ProjectDetails>
                   </ProjectCard>
                 </a>

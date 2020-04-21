@@ -62,54 +62,55 @@ const Icon = styled(Image)`
     margin-right: 10px;
     
     &:hover {
+        transition: 15ms ease;
         opacity: 1.0;
     }
 `
 
-export default class Hero extends React.Component {
-    render(){
-        return (
-            <HeroHeader>
-                <Container>
-                    <Row>
-                        <Col lg={5}></Col>
-                        <HeroContent lg={7}>
-                            <Greeting>
-                                HEY THERE!
-                            </Greeting>
-                            <Name>
-                                I'M NICHOLAS CHUNG-HUN
-                            </Name>
-                            <Subtitle>
-                                A&nbsp;
-                                <TextLoop>
-                                    <span>COMPUTER ENGINEERING STUDENT 👨‍🎓</span>
-                                    <span>TRAVEL ENTHUSIAST ✈️</span>
-                                    <span>SNEAKER COLLECTOR 👟</span>
-                                    <span>FOOD CONNOISSEUR 🍣</span>
-                                </TextLoop>
-                            </Subtitle>
-                            <Icons>
-                                <a href="mailto:nicholas.schunghun@gmail.com" target="_top" >
-                                    <Icon src={Email} />
-                                </a>
-                                <a href="blank" target="_blank" >
-                                    <Icon src={Resume} />
-                                </a>
-                                <a href="https://github.com/nicholasc861" target="_blank">
-                                    <Icon src={Github} />
-                                </a>
-                                <a href="https://devpost.com/nicholasc861" target="_blank">
-                                    <Icon src={Devpost} />
-                                </a>
-                                <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_blank">
-                                    <Icon src={Linkedin} />
-                                </a>
-                            </Icons>
-                        </HeroContent>
-                    </Row>
-                </Container>
-            </HeroHeader>
-        )
-    }
+const Hero = () => {
+    return (
+        <HeroHeader>
+            <Container>
+                <Row>
+                    <Col lg={5}></Col>
+                    <HeroContent lg={7}>
+                        <Greeting>
+                            HEY THERE!
+                        </Greeting>
+                        <Name>
+                            I'M NICHOLAS CHUNG-HUN
+                        </Name>
+                        <Subtitle>
+                            A&nbsp;
+                            <TextLoop>
+                                <span>COMPUTER ENGINEERING STUDENT 👨‍🎓</span>
+                                <span>TRAVEL ENTHUSIAST ✈️</span>
+                                <span>SNEAKER COLLECTOR 👟</span>
+                                <span>FOOD CONNOISSEUR 🍣</span>
+                            </TextLoop>
+                        </Subtitle>
+                        <Icons>
+                            <a href="mailto:nicholas.schunghun@gmail.com" target="_top" >
+                                <Icon src={Email} />
+                            </a>
+                            <a href="blank" target="_blank" >
+                                <Icon src={Resume} />
+                            </a>
+                            <a href="https://github.com/nicholasc861" target="_blank">
+                                <Icon src={Github} />
+                            </a>
+                            <a href="https://devpost.com/nicholasc861" target="_blank">
+                                <Icon src={Devpost} />
+                            </a>
+                            <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_blank">
+                                <Icon src={Linkedin} />
+                            </a>
+                        </Icons>
+                    </HeroContent>
+                </Row>
+            </Container>
+        </HeroHeader>
+    )
 }
+
+export default Hero

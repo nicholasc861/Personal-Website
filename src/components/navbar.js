@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import {Navbar, Nav} from "react-bootstrap"
 import styled from "styled-components"
 import PropTypes from "prop-types"
@@ -35,72 +35,62 @@ const Navig = styled(Nav)`
 
 `
 
-export default class NavigationBar extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: false,
+const NavigationBar = (props) => {
+    const [showNavBar, toggleNavBar] = useState(false)
+    const {links, brand} = props
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY
+            toggleNavBar((currentScrollY > 0))
         }
 
-        this.handleScroll = this.handleScroll.bind(this)
-    }
-    
-    static propTypes = {
-        brand: PropTypes.shape({
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [showNavBar])
+
+    const NavLinks = () => 
+        links.map((link, index) => (
+            <Nav.Link key={index} active={false} href={link.to}>
+                {link.name}
+            </Nav.Link>
+        ))
+
+    return (
+        <Transition>
+            <StyledNavbar expand="lg" bg="light" variant="light" className={showNavBar ? "active" : "hidden"}>
+                <Navbar.Brand href={brand.to}>
+                    <img 
+                        src={Logo} 
+                        width="35" 
+                        height="35"
+                        className="d-inline-block align-top"
+                        alt="logo" />
+                </Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Navig className="justify-content-end">
+                        <NavLinks />
+                    </Navig>
+                    </Navbar.Collapse>
+            </StyledNavbar>
+        </Transition>
+    )
+}
+
+NavigationBar.propTypes = {
+    brand: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        to: PropTypes.string.isRequired
+    }),
+    links: PropTypes.arrayOf(
+        PropTypes.shape({
             name: PropTypes.string.isRequired,
             to: PropTypes.string.isRequired
-        }),
-        links: PropTypes.arrayOf(
-            PropTypes.shape({
-                name: PropTypes.string.isRequired,
-                to: PropTypes.string.isRequired
-            })
-        )
-    }
-    
-    componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll)
-    }
-
-    componentWillUnmount() {
-        window.addEventListener("scroll", this.handleScroll)
-    }
-
-    handleScroll() {
-        this.setState({
-            show: window.scrollY > 0
         })
-    }
-
-    render(){
-        const { brand, links } = this.props;
-        const NavLinks = () =>
-            links.map((link, index) => (
-                <Nav.Link eventKey={index} active={false} href={link.to}>
-                    {link.name}
-                </Nav.Link>
-            ))
-
-
-        return (
-            <Transition>
-                <StyledNavbar expand="lg" bg="light" variant="light" className={this.state.show ? "active" : "hidden"}>
-                    <Navbar.Brand href={brand.to}>
-                        <img 
-                            src={Logo} 
-                            width="35" 
-                            height="35"
-                            className="d-inline-block align-top"
-                            alt="logo" />
-                    </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Navig className="justify-content-end">
-                            <NavLinks />
-                        </Navig>
-                        </Navbar.Collapse>
-                </StyledNavbar>
-            </Transition>
-        )
-    }
+    )
 }
+
+export default NavigationBar
