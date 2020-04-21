@@ -72,7 +72,7 @@ const Projects = () => {
   const [showArrows, setArrow] = useState(false)
 
   return(
-      <div onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
+      <div id="#projects" onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
           <Title>MY PORTFOLIO</Title>
             <ProjectCarousel responsive={responsive} arrows={showArrows} renderButtonGroupOutside={true} infinite={true}>
                 <a href="https://github.com/nicholasc861/SlackOff" target="_blank" >
