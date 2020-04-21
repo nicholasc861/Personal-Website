@@ -1,27 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e9d79f3605044c627476fcb009ee71d9",
+    "revision": "019d1abf0fb543f0ce12a0166f1831a5",
     "url": "/index.html"
   },
   {
-    "revision": "6a34952da31c82997ef5",
+    "revision": "b3efd238fd5f73af637e",
     "url": "/static/css/2.37c00e0b.chunk.css"
   },
   {
-    "revision": "6a34952da31c82997ef5",
-    "url": "/static/js/2.8c46d5c4.chunk.js"
+    "revision": "b3efd238fd5f73af637e",
+    "url": "/static/js/2.ce25a73f.chunk.js"
   },
   {
     "revision": "bf23039b4e70a07c5aeb1b4010df3572",
-    "url": "/static/js/2.8c46d5c4.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.ce25a73f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8faa0b7de039734848ea",
-    "url": "/static/js/main.7c37d3b0.chunk.js"
+    "revision": "61665890bf8cb576abab",
+    "url": "/static/js/main.7195713f.chunk.js"
   },
   {
     "revision": "eae1e96a3b2e5d56a29a",
     "url": "/static/js/runtime-main.3c6a7099.js"
+  },
+  {
+    "revision": "dcfd7a805d6d4e62f2ccbbca3aa90f4e",
+    "url": "/static/media/Deafpost.dcfd7a80.png"
   },
   {
     "revision": "a95e536b6f043c9f90afc61c64eb1a63",
