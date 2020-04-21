@@ -6,6 +6,8 @@ import styled from "styled-components"
 
 import 'react-multi-carousel/lib/styles.css';
 import Slackoff from '../assets/Projects/Slackoff.png'
+import Mercari from '../assets/Projects/Mercari.png'
+import Deafpost from '../assets/Projects/Deafpost.png'
 
 const Title = styled.div`
     font-family: "Montserrat", sans-serif;
@@ -80,13 +82,21 @@ const Projects = () => {
                     </ProjectDetails>
                   </ProjectCard>
                 </a>
-                <a href="http://google.com">
-                  <ProjectCard src={Slackoff} />
+                <a href="https://github.com/nicholasc861/Mercari-API" target="_blank" >
+                  <ProjectCard imageSrc={Mercari}>
+                    <ProjectDetails>
+                      Mercari API
+                    </ProjectDetails>
+                  </ProjectCard>   
                 </a>
-                <a href="http://google.com">
-                  <ProjectCard src={Slackoff} />
+                <a href="https://devpost.com/software/deaf-post-3wgmn8" target="_blank" >
+                  <ProjectCard imageSrc={Deafpost}>
+                    <ProjectDetails>
+                      Deafpost
+                    </ProjectDetails>
+                  </ProjectCard>
                 </a>
-                <a href="http://google.com">
+                <a href="" target="_blank" >
                   <ProjectCard src={Slackoff} />
                 </a>
             </ProjectCarousel>
