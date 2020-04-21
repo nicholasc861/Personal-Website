@@ -14,7 +14,7 @@ const Title = styled.div`
     font-size: 30px;
     font-weight: 800;
     text-align: center;
-    padding: 20px 0px;
+    padding: 40px 0px;
 `
 
 const ProjectDetails = styled.div`
@@ -42,7 +42,7 @@ const ProjectCard = styled.div`
 `
 
 const ProjectCarousel = styled(Carousel)`
-    margin: 0px 200px;
+    margin: 0px 400px;
     text-align: center;
     text-decoration: none;
 
