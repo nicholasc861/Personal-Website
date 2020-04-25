@@ -16,17 +16,24 @@ const AboutInfo = styled.div`
     margin: 20px;
     margin-left: 120px;
     color: #434854;
+
+    br {
+        line-height: 2px;
+    }
 `
 
 const Greeting = styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: "Karla", sans-serif;
     font-weight: 600;
     font-size: 25px;
+    color: #282A30;
+
+    
 `
 
 const AboutPhoto = styled(Image)`
-    width: 300px;
-    height: 300px;
+    width: 310px;
+    height: 310px;
     align-self: center;
     margin: 20px;
     margin-right: 120px;
@@ -42,8 +49,11 @@ const AboutSection = () => {
                 <Row>
                     <Col lg={7}>
                         <AboutInfo>
-                            <Greeting>Hi!</Greeting>
-                            <br />
+                            <Greeting>
+                                Hi!
+                                <br />
+                                —
+                            </Greeting>
                             My name is Nicholas! I am currently a first-year Computer Engineering
                             student at the University of Waterloo. In my free time, you can find me
                             on the field playing Ultimate Frisbee or researching my next food adventure.
@@ -51,10 +61,10 @@ const AboutSection = () => {
                             <br />
                             I've always loved technology and often find myself
                             browsing new phone releases and technological advancements.
-                            Recently, I've been learning Go and building web apps with react.
+                            Recently, I've been learning Go and building web apps with React.
                             <br />
                             <br />
-                            Let's Chat!
+                            Feel free to reach out to grab a coffee!
                         </AboutInfo>
                     </Col>
                     <Col lg={5}>

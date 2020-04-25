@@ -10,12 +10,16 @@ import Mercari from '../assets/Projects/Mercari.png'
 import Deafpost from '../assets/Projects/Deafpost.png'
 
 const Title = styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: "Karla", sans-serif;
     font-size: 30px;
     font-weight: 800;
     text-align: center;
-    padding: 40px 0px;
+    padding: 0px 0px 25px 0px;
 `
+
+const Projects = styled.div`
+    padding: 100px 100px;
+` 
 
 const ProjectDetails = styled.div`
     position: relative;
@@ -32,8 +36,8 @@ const ProjectDetails = styled.div`
 const ProjectCard = styled.div`
     background-image: url(${props => props.imageSrc});
     background-size: cover;
-    height: 300px;
-    width: 300px;
+    height: 200px;
+    width: 200px;
     margin: auto;
 
     &:hover {
@@ -44,7 +48,7 @@ const ProjectCard = styled.div`
 `
 
 const ProjectCarousel = styled(Carousel)`
-    margin: 0px 400px;
+    margin: 0px 200px;
     text-align: center;
     text-decoration: none;
 
@@ -70,11 +74,11 @@ const responsive = {
     }
   };
 
-const Projects = () => {
+const ProjectSection = () => {
   const [showArrows, setArrow] = useState(false)
 
   return(
-      <div id="projects" onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
+      <Projects id="projects" onMouseEnter={() => setArrow(true)} onMouseLeave={() => setArrow(false)}>
           <Title>MY PORTFOLIO</Title>
             <ProjectCarousel responsive={responsive} arrows={showArrows} renderButtonGroupOutside={true} infinite={true}>
                 <a href="https://github.com/nicholasc861/SlackOff" target="_blank" >
@@ -107,9 +111,9 @@ const Projects = () => {
                   <ProjectCard src={Slackoff} />
                 </a>
             </ProjectCarousel>
-      </div>
+      </Projects>
   )
     
 }
 
-export default Projects
+export default ProjectSection

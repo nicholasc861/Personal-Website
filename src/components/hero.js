@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import TextLoop from "react-text-loop"
 import { Container, Row, Col, Image } from "react-bootstrap"
 
@@ -10,6 +10,7 @@ import Devpost from "../assets/devpost.svg"
 import Linkedin from "../assets/linkedin.svg"
 import Resume from "../assets/resume.svg"
 import Email from "../assets/email.svg"
+import Arrow from "../assets/arrow.svg"
 
 
 const Name = styled.div`
@@ -51,6 +52,15 @@ const HeroHeader = styled.header`
     height: 100vh;
 `
 
+const BottomArrow = styled(Image)`
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    opacity: ${props => props.opacity};
+`
+
 const Icons = styled.div`
     margin-top: 5px
 `
@@ -68,6 +78,22 @@ const Icon = styled(Image)`
 `
 
 const Hero = () => {
+    const [Opacity, changeOpacity] = useState(1)
+
+    useEffect(() => {
+        const handleScroll = () => {
+            let currentScrollY = 75 / window.scrollY < 0.1 ? 0 : 100 / window.scrollY
+            console.log(currentScrollY)
+            let opacity = Math.min(currentScrollY, 1) 
+            changeOpacity(opacity)
+        }
+
+        window.addEventListener("scroll", handleScroll)
+        return () => {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [Opacity])
+
     return (
         <HeroHeader>
             <Container>
@@ -109,6 +135,7 @@ const Hero = () => {
                     </HeroContent>
                 </Row>
             </Container>
+            <BottomArrow src={Arrow} opacity={Opacity}></BottomArrow>
         </HeroHeader>
     )
 }
