@@ -4,7 +4,7 @@ import { Container, Col, Row } from "react-bootstrap"
 import styled from 'styled-components'
 
 const Contact = styled.div`
-    padding: 50px 100px 0px;
+    padding: 50px 250px 0px;
     background-color: #F9F9F9;
 
 `
@@ -30,6 +30,13 @@ const Section = styled.div`
         font-family: "Karla", sans-serif;
         font-size: 18px;
         font-weight: 600;
+    }
+
+    h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 0 0 5px;
     }
 
     a {
@@ -69,41 +76,51 @@ const ContactSection = () => {
                         </Section>
                     </Col>
                     <Col>
-                    <Section>
+                        <Section>
                             <h1>
                                 Find Out More
                                 <br />
                                 —
                             </h1>
-                            <a href="" target="_top" >
-                                Resume
-                            </a>
-                            <br />
-                            <a href="https://www.github.com/nicholasc861" target="_top" >
-                                Github
-                            </a>
-                            <br />
-                            <a href="https://www.devpost.com/nicholasc861" target="_top" >
-                                Devpost
-                            </a>
-                            <br />
-                            <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_top" >
-                                LinkedIn
-                            </a>
+                            <h2>
+                                <a href="" target="_top" >
+                                    Resume
+                                </a>
+                            </h2>
+                            <h2>
+                                <a href="https://www.github.com/nicholasc861" target="_top" >
+                                    Github
+                                </a>
+                            </h2>
+                            <h2>
+                                <a href="https://www.devpost.com/nicholasc861" target="_top" >
+                                    Devpost
+                                </a>
+                            </h2>
+                            <h2>
+                                <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_top" >
+                                    LinkedIn
+                                </a>
+                            </h2>
                         </Section>
                     </Col>
                     <Col>
-                    <Section>
+                        <Section>
                             <h1>
                                 Get in Touch
                                 <br />
                                 —
                             </h1>
-                                <a href="mailto:nicholas.schunghun@gmail.com" target="_top" >
-                                    nicholas.schunghun@gmail.com
+                                <h2>General Inquiries</h2>
+                                <a href="contact@nicholaschung-hun.me" target="_top" >
+                                    contact@nicholaschung-hun.me
                                 </a>
-
-                            <br />
+                                <br />
+                                <br />
+                                <h2>Internship Opportunities</h2>
+                                <a href="intern@nicholaschung-hun.me" target="_top" >
+                                    intern@nicholaschung-hun.me
+                                </a>
                         </Section>
                     </Col>
                 </Row>
