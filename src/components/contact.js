@@ -83,22 +83,22 @@ const ContactSection = () => {
                                 —
                             </h1>
                             <h2>
-                                <a href="" target="_top" >
+                                <a href="" target="_blank" >
                                     Resume
                                 </a>
                             </h2>
                             <h2>
-                                <a href="https://www.github.com/nicholasc861" target="_top" >
+                                <a href="https://www.github.com/nicholasc861" target="_blank" >
                                     Github
                                 </a>
                             </h2>
                             <h2>
-                                <a href="https://www.devpost.com/nicholasc861" target="_top" >
+                                <a href="https://www.devpost.com/nicholasc861" target="_blank" >
                                     Devpost
                                 </a>
                             </h2>
                             <h2>
-                                <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_top" >
+                                <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_blank" >
                                     LinkedIn
                                 </a>
                             </h2>
