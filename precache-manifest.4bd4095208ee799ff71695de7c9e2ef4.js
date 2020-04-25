@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "019d1abf0fb543f0ce12a0166f1831a5",
+    "revision": "23078e24de49af1194b09aa1dd741775",
     "url": "/index.html"
   },
   {
-    "revision": "b3efd238fd5f73af637e",
+    "revision": "255d3e2ebd07ac8a2c1e",
     "url": "/static/css/2.37c00e0b.chunk.css"
   },
   {
-    "revision": "b3efd238fd5f73af637e",
-    "url": "/static/js/2.ce25a73f.chunk.js"
+    "revision": "255d3e2ebd07ac8a2c1e",
+    "url": "/static/js/2.370bcc3b.chunk.js"
   },
   {
     "revision": "bf23039b4e70a07c5aeb1b4010df3572",
-    "url": "/static/js/2.ce25a73f.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.370bcc3b.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "61665890bf8cb576abab",
-    "url": "/static/js/main.7195713f.chunk.js"
+    "revision": "133d078f34dce74bcf5b",
+    "url": "/static/js/main.accd8d3d.chunk.js"
   },
   {
     "revision": "eae1e96a3b2e5d56a29a",
@@ -32,6 +32,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/aboutPhoto.a95e536b.jpg"
   },
   {
+    "revision": "d4b52d073fa4bfad355f080d19aadd2d",
+    "url": "/static/media/arrow.d4b52d07.svg"
+  },
+  {
     "revision": "47353db12e0af7877ab4e7f21ad23cc8",
     "url": "/static/media/background.47353db1.jpg"
   },
@@ -40,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/devpost.8cd3c789.svg"
   },
   {
-    "revision": "4f10558774f49e3baa5e20925da18619",
-    "url": "/static/media/email.4f105587.svg"
+    "revision": "52106f280e5f67d80778cd51219bcd46",
+    "url": "/static/media/email.52106f28.svg"
   },
   {
     "revision": "9752329fa4bb81f8ffbf9d55ef226e64",
@@ -56,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/logo.72fbff22.svg"
   },
   {
-    "revision": "de428c98c0c90722433ef850997d3d35",
-    "url": "/static/media/resume.de428c98.svg"
+    "revision": "9238bf17ee707e6db59e269473dbc554",
+    "url": "/static/media/resume.9238bf17.svg"
   },
   {
     "revision": "04eb8fc57f27498e5ae37523e3bfb2c7",
