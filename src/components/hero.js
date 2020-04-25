@@ -116,7 +116,7 @@ const Hero = () => {
                             </TextLoop>
                         </Subtitle>
                         <Icons>
-                            <a href="mailto:nicholas.schunghun@gmail.com" target="_top" >
+                            <a href="mailto:contact@nicholaschung-hun.me" target="_top" >
                                 <Icon src={Email} />
                             </a>
                             <a href="blank" target="_blank" >
