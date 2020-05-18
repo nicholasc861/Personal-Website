@@ -48,7 +48,7 @@ const Section = styled.div`
     a:hover {
         color: #97D2FB;
         text-decoration: underline;
-        text-decoration-style: dotted;
+        transition: 0.25s ease-in;
     }
 `
 

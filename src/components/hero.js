@@ -72,7 +72,7 @@ const Icon = styled(Image)`
     margin-right: 10px;
     
     &:hover {
-        transition: 15ms ease;
+        transition: 0.25s ease;
         opacity: 1.0;
     }
 `
