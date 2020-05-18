@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "79aca590f23dd866a2a3410514249fba",
+    "revision": "9f62f76271dddd2a3c62c2f8af44aac5",
     "url": "/index.html"
   },
   {
-    "revision": "255d3e2ebd07ac8a2c1e",
+    "revision": "c44aceab86b29d244014",
     "url": "/static/css/2.37c00e0b.chunk.css"
   },
   {
-    "revision": "255d3e2ebd07ac8a2c1e",
-    "url": "/static/js/2.370bcc3b.chunk.js"
+    "revision": "c44aceab86b29d244014",
+    "url": "/static/js/2.84721442.chunk.js"
   },
   {
     "revision": "bf23039b4e70a07c5aeb1b4010df3572",
-    "url": "/static/js/2.370bcc3b.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.84721442.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "09fde7ed03e6f1bf78f1",
-    "url": "/static/js/main.1fb3611c.chunk.js"
+    "revision": "b89b1c10e939322577ae",
+    "url": "/static/js/main.15fe9d3c.chunk.js"
   },
   {
     "revision": "eae1e96a3b2e5d56a29a",
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/aboutPhoto.a95e536b.jpg"
   },
   {
-    "revision": "d4b52d073fa4bfad355f080d19aadd2d",
-    "url": "/static/media/arrow.d4b52d07.svg"
+    "revision": "0eb60741b083a3f60ab92bbfb944ea44",
+    "url": "/static/media/arrow.0eb60741.svg"
   },
   {
     "revision": "47353db12e0af7877ab4e7f21ad23cc8",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/devpost.8cd3c789.svg"
   },
   {
-    "revision": "52106f280e5f67d80778cd51219bcd46",
-    "url": "/static/media/email.52106f28.svg"
+    "revision": "4f10558774f49e3baa5e20925da18619",
+    "url": "/static/media/email.4f105587.svg"
   },
   {
     "revision": "9752329fa4bb81f8ffbf9d55ef226e64",
@@ -60,8 +60,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/logo.72fbff22.svg"
   },
   {
-    "revision": "9238bf17ee707e6db59e269473dbc554",
-    "url": "/static/media/resume.9238bf17.svg"
+    "revision": "de428c98c0c90722433ef850997d3d35",
+    "url": "/static/media/resume.de428c98.svg"
   },
   {
     "revision": "04eb8fc57f27498e5ae37523e3bfb2c7",
