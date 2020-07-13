@@ -17,6 +17,11 @@ const StyledNavbar = styled(Navbar)`
     z-index: 10;
     font-weight: 600;
     flex-direction: row;
+
+    @media screen and (max-width: 768px) {
+        height: 6rem;
+    }
+
 `
 const Transition = styled.div`
     .active {

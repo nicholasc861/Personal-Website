@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import { Container, Col, Row } from "react-bootstrap"
+import {scrollreveal, srBottomConfig} from '../utils/scrollreveal'
 
 import styled from 'styled-components'
 
@@ -53,12 +54,27 @@ const Section = styled.div`
 `
 
 const ContactSection = () => {
+    const reveal1 = useRef(null);
+    const reveal2 = useRef(null);
+    const reveal3 = useRef(null);
+    const reveal4 = useRef(null);
+
+
+    useEffect(() => {
+        scrollreveal.reveal(reveal1.current, srBottomConfig())
+        scrollreveal.reveal(reveal2.current, srBottomConfig())
+        scrollreveal.reveal(reveal3.current, srBottomConfig())
+        scrollreveal.reveal(reveal4.current, srBottomConfig())
+
+    })
+
+
     return(
         <Contact id="contact">
             <Container>
                 <Row>
                     <Col xs={5}>
-                        <Section>
+                        <Section ref={reveal1}>
                             <h1>
                                 Summary
                                 <br />
@@ -76,7 +92,7 @@ const ContactSection = () => {
                         </Section>
                     </Col>
                     <Col>
-                        <Section>
+                        <Section ref={reveal2}>
                             <h1>
                                 Find Out More
                                 <br />
@@ -105,7 +121,7 @@ const ContactSection = () => {
                         </Section>
                     </Col>
                     <Col>
-                        <Section>
+                        <Section ref={reveal3}>
                             <h1>
                                 Get in Touch
                                 <br />
@@ -125,7 +141,7 @@ const ContactSection = () => {
                     </Col>
                 </Row>
             </Container>
-            <Copyright>
+            <Copyright ref={reveal4}>
                 Developed by Nicholas Chung-Hun © 2020
             </Copyright>
         </Contact>

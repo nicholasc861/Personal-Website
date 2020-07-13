@@ -1,34 +1,21 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { createGlobalStyle } from 'styled-components'
 
 // Component Imports
 import Hero from "./components/hero"
 import NavigationBar from "./components/navbar"
 import AboutSection from "./components/about"
-import Projects from "./components/projects"
+import MainProjectSection from "./components/projects"
+import OtherProjectSection from "./components/otherprojects"
 import ContactSection from "./components/contact"
 import PageWrapper from "./components/PageWrapper"
+import ExperienceSection from './components/experience';
+import GlobalStyle from './styles/GlobalStyle';
 
-const GlobalStyle = createGlobalStyle`
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-        sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    a:hover {
-      text-decoration: none;
-      
-    }
-
-`
 
 const navlinks = [
   { name: "About", to: "#about" },
+  { name: "Experience", to: "#experience" },
   { name: "Projects", to: "#projects" },
   { name: "Contact", to: "#contact" }
 ]
@@ -40,9 +27,11 @@ const Page = () => {
       <PageWrapper>
         <GlobalStyle />
         <NavigationBar brand={brand} links={navlinks} />
-        <Hero id="" />
+        <Hero />
         <AboutSection />
-        <Projects />
+        <ExperienceSection />
+        <MainProjectSection />
+        <OtherProjectSection />
         <ContactSection />
       </PageWrapper>
     );
