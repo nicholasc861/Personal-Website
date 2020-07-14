@@ -292,16 +292,13 @@ maintain a fun and inclusive atmopshere for all campers
                             <ExperienceDetails>
                                 <ul>
                                     <li>
-                                        Coordinated development of an information radiator deployed to sites globally using scripts that
-                                        increased efficiency by 100%
+                                        Organized backroom product and followed proper inventory management procedures
                                     </li>
                                     <li>
-                                        Developed a web application using React.js and Express.js to provide contextual information to guide
-                                        clients and employees on where to obtain support
+                                        Maintained product displays and aisles to ensure that store standards pertaining to image were followed
                                     </li>
                                     <li>
-                                        Overhauled error handling and reporting to ensure that generated reports for employees would
-                                        provide consistent data
+                                        Maintained daily reports in regards to inventory anomalies, temperature inspections and removal of expired goods
                                     </li>
                                 </ul>
                             </ExperienceDetails>

@@ -45,7 +45,7 @@ const About = styled.section`
 /* About Section Content */
 
 const AboutInfo = styled.div`
-    font-family: "Montserrat", sans-serif;
+    font-family: "Karla", sans-serif;
     font-size: 16px;
     margin: 20px 40px;
     color: #434854;

@@ -108,6 +108,9 @@ const ProjectImgContainer = styled.a`
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 
   :hover {
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -o-transform: scale(1.05);
     transform: scale(1.05);
   }
 `
@@ -122,7 +125,6 @@ const ProjectLinks = styled.div`
     cursor: pointer;
 
     :hover {
-
     }
   }
 `
