@@ -125,7 +125,7 @@ const AboutSection = () => {
                                 <br />
                                 <br />
                             </Greeting>
-                            My name is Nicholas! I am currently a first-year Computer Engineering
+                            My name is Nicholas! I am currently a second-year Computer Engineering
                             student at the University of Waterloo. In my free time, you can find me
                             on the field playing Ultimate Frisbee or researching my next food adventure.
                             <br />
