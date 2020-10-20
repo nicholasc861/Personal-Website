@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.6667aa19.chunk.js",
-    "main.js.map": "/static/js/main.6667aa19.chunk.js.map",
+    "main.js": "/static/js/main.3bbea5c9.chunk.js",
+    "main.js.map": "/static/js/main.3bbea5c9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.3c6a7099.js",
     "runtime-main.js.map": "/static/js/runtime-main.3c6a7099.js.map",
     "static/js/2.45e5cdd9.chunk.js": "/static/js/2.45e5cdd9.chunk.js",
     "static/js/2.45e5cdd9.chunk.js.map": "/static/js/2.45e5cdd9.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.73701b63f33438e6c52bd6df280035d7.js": "/precache-manifest.73701b63f33438e6c52bd6df280035d7.js",
+    "precache-manifest.0988d729ec1883ef759979aaa6ce444b.js": "/precache-manifest.0988d729ec1883ef759979aaa6ce444b.js",
     "service-worker.js": "/service-worker.js",
     "static/js/2.45e5cdd9.chunk.js.LICENSE.txt": "/static/js/2.45e5cdd9.chunk.js.LICENSE.txt",
     "static/media/FoodDeadline.png": "/static/media/FoodDeadline.6b471e23.png",
@@ -26,6 +26,6 @@
   "entrypoints": [
     "static/js/runtime-main.3c6a7099.js",
     "static/js/2.45e5cdd9.chunk.js",
-    "static/js/main.6667aa19.chunk.js"
+    "static/js/main.3bbea5c9.chunk.js"
   ]
 }
