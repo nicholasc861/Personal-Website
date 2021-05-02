@@ -6,9 +6,9 @@ import theme from "../styles/theme"
 import {scrollreveal, srBottomConfig, srRightConfig} from '../utils/scrollreveal'
 
 
-import FoodDeadline from "../assets/FoodDeadline.png";
-import SlackOff from "../assets/Portfolio/Slackoff-new.png";
-import Github from "../assets/github-black.svg";
+import FoodDeadline from "../assets/Portfolio/FoodDeadline.png";
+import SlackOff from "../assets/Portfolio/Slackoff.png";
+import Github from "../assets/github.svg";
 
 
 const MainProjects = styled.div`
