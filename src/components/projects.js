@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from "react";
 
 import { Container, Col, Row, Image } from "react-bootstrap";
 import styled from "styled-components";
-import theme from "../styles/theme"
 import {scrollreveal, srBottomConfig, srRightConfig} from '../utils/scrollreveal'
 
 
@@ -14,7 +13,6 @@ import Github from "../assets/github.svg";
 const MainProjects = styled.div`
   padding: 50px 100px 100px 100px;
   background-color: #F9F9F9;
-  font-family: ${theme.fonts.main};
   flex-direction: column;
   align-items: flex-start;
 

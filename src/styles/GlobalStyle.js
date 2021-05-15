@@ -1,10 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle`    
     body {
       margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      font-family: 'Inter',
         sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -119,3 +118,9 @@ const GlobalStyle = createGlobalStyle`
 `
 
 export default GlobalStyle
+
+/* Dark Theme Colours
+Base Colour: #121212
+Accent Colour: #109322
+
+*/
