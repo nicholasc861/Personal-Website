@@ -6,12 +6,10 @@ import { Container, Row, Col, Image } from "react-bootstrap";
 import styled from "styled-components";
 
 import ProfilePhoto from "../assets/cropped.jpg";
-import Background from "../assets/bg2.JPG";
 import Github from "../assets/github.svg";
 import Devpost from "../assets/devpost.svg";
 import Linkedin from "../assets/linkedin.svg";
 import Resume from "../assets/resume.svg";
-import Email from "../assets/email.svg";
 import Arrow from "../assets/arrow.svg";
 
 const HeroHeader = styled.header`
@@ -144,17 +142,17 @@ const Hero = () => {
                   </IconRing>
                 </a>
 
-                <a href="https://www.github.com/nicholasc861" target="_blank" rel="noreferrer">
+                <a href="https://www.linkedin.com/in/nicholaschunghun/" target="_blank" rel="noreferrer">
                   <IconRing>
                     <Icon src={Linkedin} />
                   </IconRing>
                 </a>
-                <a href="https://www.github.com/nicholasc861" target="_blank" rel="noreferrer">
+                <a href="" target="_blank" rel="noreferrer">
                   <IconRing>
                     <Icon src={Resume} />
                   </IconRing>
                 </a>
-                <a href="https://www.github.com/nicholasc861" target="_blank" rel="noreferrer">
+                <a href="https://devpost.com/nicholasc861" target="_blank" rel="noreferrer">
                   <IconRing>
                     <Icon src={Devpost} />
                   </IconRing>

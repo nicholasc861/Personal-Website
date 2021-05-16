@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
       margin: 0;
       font-family: 'Inter',
         sans-serif;
+      color: #f7f9f9;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }

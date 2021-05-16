@@ -5,12 +5,6 @@ const theme = {
         highlight: '#97D2FB',
         test: '#476C9B',
     },
-
-    fonts: {
-        main: "'Karla', sans-serif",
-        secondary: "'Montserrat', sans-serif",
-    },
-
 }
 
 export default theme

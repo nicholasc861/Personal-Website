@@ -1,313 +1,277 @@
-import React, { useEffect, useState, useRef } from 'react'
-import {Container, Row, Col} from 'react-bootstrap'
-import {scrollreveal, srBottomConfig} from '../utils/scrollreveal'
-import theme from '../styles/theme'
+import React, { useEffect, useState, useRef } from "react";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import { scrollreveal, srBottomConfig } from "../utils/scrollreveal";
+import theme from "../styles/theme";
 
-import styled from "styled-components"
+import LocationPin from "../assets/pin.svg";
+import Calendar from "../assets/calendar.svg";
 
-const Experience = styled.section`
-    padding: 100px 0px 200px;
-    background-color: #F9F9F9;
-    font-family: ${theme.fonts.main};
+import styled from "styled-components";
 
-    h1 {
-        text-align: center;
-        font-weight: 600;
-        font-size: 32px;
-        text-transform: uppercase;
-        padding-bottom: 40px;
-    }
+const Experience = styled.div`
+  padding: 100px 0px 200px;
+  background-color: #1c1d1f;
 
-    .container {
-        width: 80%;
-    }
-`
+  .container {
+    width: 80%;
+  }
+`;
+
+const Header = styled.div`
+  font-size: 45px;
+  font-weight: bold;
+  color: #2fbf71;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+`;
 
 const ExperienceList = styled.ul`
-    display: block;
-    position: relative;
-    width: max-content;
-    padding: 0;
-    margin: 0;
-    float: right;
-    list-style: none;
-`
+  display: block;
+  position: relative;
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  float: right;
+  list-style: none;
+`;
+
+const Outline = styled.div`
+  border: 0.5px solid #2fbf71;
+  box-sizing: border-box;
+  margin-right: 10px;
+  border-radius: 13px;
+  padding: 3px 10px;
+  display: flex;
+  align-items: center;
+`;
 
 const ExperienceItem = styled.button`
-    display: flex;
-    align-items: center;
-    text-align: left;
-    width: 100%;
-    height: 40px;
-    background-color: transparent;
-    padding: 0 20px 2px;
-    white-space: nowrap;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-    border: none;
-    color: ${props => (props.isActive ? `${theme.colours.test}` : '#000000')};
-    font-size: 16px;
-    border-left: 2px solid ${theme.colours.test};
+  display: flex;
+  align-items: center;
+  text-align: left;
+  width: 100%;
+  height: 40px;
+  background-color: transparent;
+  padding: 0 20px 2px;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  border: none;
+  color: ${(props) => (props.isActive ? "#2fbf71" : "#f7f9f9")};
+  font-size: 16px;
+  border-left: 2px solid #2fbf71;
 
-    &:hover,
-    &:focus {
-        outline: 0;
-    }
-`
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
+`;
 
 const ExperienceContent = styled.div`
-    position: relative;
-    width: 100%;
-    height: auto;
-    padding-left: 50px;
-    transition: visibility 1s linear;
-`
+  position: relative;
+  width: 100%;
+  height: auto;
+  padding-left: 50px;
+  transition: visibility 1s linear;
+`;
+
+const Icon = styled(Image)`
+  width: 13px;
+  height: 13px;
+  fill: #f7f9f9;
+  margin-right: 6px;
+
+  &:hover {
+    transition: 0.25s ease;
+    opacity: 1;
+  }
+`;
+
+const Seperator = styled.div`
+  height: 0px;
+  width: 30px;
+  border: 1px solid #2fbf71;
+  margin: 20px 0px;
+`;
 
 const ExperienceTitle = styled.h4`
-    color: ${theme.colours.main};
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 5px;
-`
+  color: #f7f9f9;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 5px;
+`;
 
 const ExperienceCompany = styled.span`
-    a {
-        color: ${theme.colours.test} !important;
-        text-decoration: none;
-        position: relative;
-        cursor: pointer;
-        display: inline-block;
+  color: #2fbf71 !important;
 
-        :after {
-            bottom: 0;
-            content: "";
-            display: block;
-            height: 2px;
-            left: 50%;
-            background: ${theme.colours.test};
-            position: absolute;
-            transition: width 0.5s ease 0s, left 0.5s ease 0s;
-            width: 0;
-        }
+  a {
+    color: #2fbf71 !important;
+    text-decoration: none;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
 
-        :hover {
-            :after {
-                width: 100%;
-                left: 0;
-            }
-            
-        }
+    :after {
+      bottom: 0;
+      content: "";
+      display: block;
+      height: 2px;
+      left: 50%;
+      background: #2fbf71;
+      position: absolute;
+      transition: width 0.5s ease 0s, left 0.5s ease 0s;
+      width: 0;
     }
-    
-`
 
-const ExperienceDate = styled.div`
-    font-size: 15px;
-    padding-top: 5px;
-`
+    :hover {
+      :after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+`;
 
+const ExperienceSubtitle = styled.div`
+  font-size: 14px;
+  padding-top: 5px;
+  display: flex;
+`;
 
 const ExperienceDetails = styled.div`
-    padding-top: 10px;
-    width: 80%;
+  width: 80%;
 
-    ul {
-        padding: 0px;
-        li {
-            padding: 5px 0px;
-            list-style: none;
+  ul {
+    padding: 0px;
+    li {
+      padding-bottom: 10px;
+      list-style: none;
 
-
-            ::before {
-                content: "» ";
-            }
-        }
+      ::before {
+        content: "» ";
+      }
     }
-`
+  }
+`;
+
+const Experiences = [
+  {
+    title: "Software Engineering Intern",
+    company: "Candor",
+    website: "https://candor.co",
+    time: "April 2021 - Present",
+    location: "Remote / San Francisco, CA",
+    logo: "",
+    job_details: [],
+  },
+  {
+    title: "Junior Software Developer Intern",
+    company: "CondoWorks",
+    website: "https://condoworks.co",
+    time: "September 2020 - December 2020",
+    location: "Remote / Richmond Hill, ON",
+    logo: "",
+    job_details: [
+      `Designing, building, and maintaining 10+ scrapers and parsers in Node.js using Puppeteer which is
+      processing over 500 vendor bills weekly while ensuring that data is gathered ethically`,
+      `Performing daily maintenance by identifying root issues on scrapers and parsers to ensure that
+      problems are addressed quickly and efficiently`,
+      `Optimizing integrations infrastructure by over 45% by creating consistent standards for future
+      development`,
+    ],
+  },
+  {
+    title: "Systems Software Engineering Intern",
+    company: "NCR Corporation",
+    website: "https://ncr.com",
+    time: "January 2020 - April 2020",
+    location: "Remote / Waterloo, ON",
+    logo: "",
+    job_details: [
+      `Coordinated development of an information radiator deployed to sites globally using scripts that
+    increased efficiency by 100%`,
+      `Developed a web application using React.js and Express.js to provide contextual information to guide
+    clients and employees on where to obtain support`,
+      `Overhauled error handling and reporting to ensure that generated reports for employees would
+    provide consistent data`,
+    ],
+  },
+];
 
 const ExperienceSection = () => {
-    const [activeExperienceId, setActiveExperienceId] = useState(0);
-    const [experienceFocus, setExperienceFocus] = useState(null);
+  const [activeExperienceId, setActiveExperienceId] = useState(0);
 
-    const revealContainer = useRef(null);
-    useEffect(() => {
-        scrollreveal.reveal(revealContainer.current, srBottomConfig())
-    })
+  const revealContainer = useRef(null);
+  useEffect(() => {
+    scrollreveal.reveal(revealContainer.current, srBottomConfig());
+  });
 
-    return (
-        <Experience id="experience">
-            <Container ref={revealContainer}>
-            <h1>Experience</h1>
-                <Row>
-                    <Col md={3}>
-                        <ExperienceList>
-                            <li key={0}>
-                                <ExperienceItem
-                                    isActive={activeExperienceId === 0}
-                                    onClick={() => setActiveExperienceId(0)}
-                                    id={`tab${0}`}
-                                    experienceIndex={activeExperienceId === 0 ? '0' : '-1'}
-                                >
-                                    NCR Corporation
-                                </ExperienceItem>
-                            </li>
-                            <li>
-                                <ExperienceItem
-                                    isActive={activeExperienceId === 1}
-                                    onClick={() => setActiveExperienceId(1)}
-                                    id={`tab${1}`}
-                                    experienceIndex={activeExperienceId === 1 ? '0' : '-1'}
-                                >
-                                    City of Richmond Hill
-                                </ExperienceItem>
-                            </li>
-                            <li>
-                                <ExperienceItem
-                                    isActive={activeExperienceId === 2}
-                                    onClick={() => setActiveExperienceId(2)}
-                                    id={`tab${2}`}
-                                    experienceIndex={activeExperienceId === 2 ? '0' : '-1'}
-                                >
-                                    Bayview DECA
-                                </ExperienceItem>
-                            </li>
-                            <li>
-                                <ExperienceItem
-                                    isActive={activeExperienceId === 3}
-                                    onClick={() => setActiveExperienceId(3)}
-                                    id={`tab${3}`}
-                                    experienceIndex={activeExperienceId === 3 ? '0' : '-1'}
-                                >
-                                    Loblaws
-                                </ExperienceItem>
-                            </li>
-                        </ExperienceList>
-                    </Col>
-                    <Col md={9}>
-                        <ExperienceContent
-                            className={(activeExperienceId !== 0) ? "" : "fade-in"}
-                            key={0}
-                            isActive={activeExperienceId === 0}
-                            experienceIndex={activeExperienceId === 0 ? '0' : '-1'}
-                            hidden={activeExperienceId !== 0}
-                        >
-                            <ExperienceTitle>
-                                Systems Software Engineering Intern @&nbsp;
-                                <ExperienceCompany>
-                                    <a href="http://ncr.com" target="_blank">NCR Corporation</a>
-                                </ExperienceCompany>
-                            </ExperienceTitle>
-                            <ExperienceDate>Jan 2020 - Apr 2020 &nbsp;|&nbsp;  Waterloo, ON</ExperienceDate>
-                            <ExperienceDetails>
-                                <ul>
-                                    <li>
-                                        Coordinated development of an information radiator deployed to sites globally using scripts that
-                                        increased efficiency by 100%
-                                    </li>
-                                    <li>
-                                        Developed a web application using React.js and Express.js to provide contextual information to guide
-                                        clients and employees on where to obtain support
-                                    </li>
-                                    <li>
-                                        Overhauled error handling and reporting to ensure that generated reports for employees would
-                                        provide consistent data
-                                    </li>
-                                </ul>
-                            </ExperienceDetails>
-                        </ExperienceContent>
+  return (
+    <Experience id="experience">
+      <Header>My Experience</Header>
+      <Container ref={revealContainer}>
+        <Row>
+          <Col md={3}>
+            <ExperienceList>
+              {Experiences.map((experience, index) => (
+                <li key={`item${index}`}>
+                  <ExperienceItem
+                    isActive={activeExperienceId === index}
+                    onClick={() => setActiveExperienceId(index)}
+                  >
+                    {experience.company}
+                  </ExperienceItem>
+                </li>
+              ))}
+            </ExperienceList>
+          </Col>
+          <Col md={9}>
+            {Experiences.map((experience, index) => (
+              <ExperienceContent
+                className={activeExperienceId !== index ? "" : "fade-in"}
+                key={index}
+                isActive={activeExperienceId === index}
+                hidden={activeExperienceId !== index}
+              >
+                <ExperienceTitle>
+                  {experience.title}
+                  <ExperienceCompany>
+                    {" @ "}
+                    <a
+                      href={experience.website}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {experience.company}
+                    </a>
+                  </ExperienceCompany>
+                </ExperienceTitle>
+                <ExperienceSubtitle>
+                  <Outline>
+                    <Icon src={Calendar} />
+                    {experience.time}
+                  </Outline>
+                  <Outline>
+                    <Icon src={LocationPin} />
+                    {experience.location}
+                  </Outline>
+                </ExperienceSubtitle>
+                <Seperator />
 
-                        <ExperienceContent
-                            className={(activeExperienceId !== 1) ? "" : "fade-in"}
-                            key={1}
-                            isActive={activeExperienceId === 1}
-                            experienceIndex={activeExperienceId === 1 ? '0' : '-1'}
-                            hidden={activeExperienceId !== 1}
-                        >
-                            <ExperienceTitle>
-                                Summer Camp Counsellor / Program Instructor @&nbsp;
-                                <ExperienceCompany>
-                                    <a href="http://richmondhill.ca" target="_blank">City of Richmond Hill</a>
-                                </ExperienceCompany>
-                            </ExperienceTitle>
-                            <ExperienceDate>Jun 2018 - Aug 2019 &nbsp;|&nbsp;  Richmond Hill, ON</ExperienceDate>
-                            <ExperienceDetails>
-                                <ul>
-                                    <li>
-                                    Demonstrated the ability to build strong relationships with campers, parents, and other staff
-                                    </li>
-                                    <li>
-                                    Developed problem-solving skills through the need to implement and adapt various activities to
-maintain a fun and inclusive atmopshere for all campers
-                                    </li>
-                                    <li>
-                                    Implemented daily lesson plans to instruct badminton, archery, and leadership skills to campers
-                                    </li>
-                                </ul>
-                            </ExperienceDetails>
-                        </ExperienceContent>
+                <ExperienceDetails>
+                  <ul>
+                    {experience.job_details.map((detail, index) => (
+                      <li key={index}>{detail}</li>
+                    ))}
+                  </ul>
+                </ExperienceDetails>
+              </ExperienceContent>
+            ))}
+          </Col>
+        </Row>
+      </Container>
+    </Experience>
+  );
+};
 
-                        <ExperienceContent
-                            className={(activeExperienceId !== 2) ? "" : "fade-in"}
-                            key={2}
-                            isActive={activeExperienceId === 2}
-                            experienceIndex={activeExperienceId === 2 ? '0' : '-1'}
-                            hidden={activeExperienceId !== 2}
-                        >
-                            <ExperienceTitle>
-                                President @&nbsp;
-                                <ExperienceCompany>
-                                    <a href="#">Bayview DECA</a>
-                                </ExperienceCompany>
-                            </ExperienceTitle>
-                            <ExperienceDate>Jun 2016 - Jun 2019 &nbsp;|&nbsp;  Richmond Hill, ON</ExperienceDate>
-                            <ExperienceDetails>
-                                <ul>
-                                    <li>
-                                    Led chapter to qualify 46 out of 90 members to the International Careers Development Conference
-(ICDC) where 6 placed Top 3 Overall in the World
-                                    </li>
-                                    <li>
-                                    Implemented a weekly training system with skill-focused workshops to case study event participants
-                                    </li>
-                                    <li>
-                                    Coodinated chapter activities between chapter members and school administration
-                                    </li>
-                                </ul>
-                            </ExperienceDetails>
-                        </ExperienceContent>
-
-                        <ExperienceContent
-                            className={(activeExperienceId !== 3) ? "" : "fade-in"}
-                            key={3}
-                            isActive={activeExperienceId === 3}
-                            experienceIndex={activeExperienceId === 3 ? '0' : '-1'}
-                            hidden={activeExperienceId !== 3}
-                        >
-                            <ExperienceTitle>
-                                Team Member @&nbsp;
-                                <ExperienceCompany>
-                                    <a href="https://loblaws.ca" target="_blank">Loblaws</a>
-                                </ExperienceCompany>
-                            </ExperienceTitle>
-                            <ExperienceDate>Nov 2017 - Nov 2018 &nbsp;|&nbsp;  Richmond Hill, ON</ExperienceDate>
-                            <ExperienceDetails>
-                                <ul>
-                                    <li>
-                                        Organized backroom product and followed proper inventory management procedures
-                                    </li>
-                                    <li>
-                                        Maintained product displays and aisles to ensure that store standards pertaining to image were followed
-                                    </li>
-                                    <li>
-                                        Maintained daily reports in regards to inventory anomalies, temperature inspections and removal of expired goods
-                                    </li>
-                                </ul>
-                            </ExperienceDetails>
-                        </ExperienceContent>
-                    </Col>
-                </Row>
-            </Container>
-        </Experience>
-    )
-}
-
-export default ExperienceSection
+export default ExperienceSection;

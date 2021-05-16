@@ -14,10 +14,10 @@ import GlobalStyle from './styles/GlobalStyle';
 
 
 const navlinks = [
-  { name: "About", to: "#about" },
-  { name: "Experience", to: "#experience" },
-  { name: "Projects", to: "#projects" },
-  { name: "Contact", to: "#contact" }
+  { name: "about", to: "#about" },
+  { name: "experience", to: "#experience" },
+  { name: "projects", to: "#projects" },
+  { name: "contact", to: "#contact" }
 ]
 
 const brand = { name: "NC", to: "#" }
