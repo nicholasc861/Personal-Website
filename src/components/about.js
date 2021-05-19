@@ -1,6 +1,6 @@
 import React from "react";
-import { useState, useRef, useEffect } from "react";
-import { Container, Col, Row, Button, Image } from "react-bootstrap";
+import { useRef, useEffect } from "react";
+import { Container, Col, Row, Image } from "react-bootstrap";
 import {
   scrollreveal,
   srBottomConfig,
@@ -102,7 +102,6 @@ const TechnologyItem = styled.li`
 /* Start Component */
 
 const AboutSection = () => {
-  const [isVisible, setVisible] = useState(true);
   const animateReveal1 = useRef(null);
   const animateReveal2 = useRef(null);
 
