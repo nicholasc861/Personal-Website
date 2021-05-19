@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-import { Container, Col, Row, Image } from "react-bootstrap";
+import { Container, Row, Image } from "react-bootstrap";
 import styled from "styled-components";
 import {
   scrollreveal,
@@ -8,9 +8,8 @@ import {
   srRightConfig,
 } from "../utils/scrollreveal";
 
-import FoodDeadline from "../assets/Portfolio/FoodDeadline.png";
+import Foodture from "../assets/Portfolio/Foodture.svg";
 import SlackOff from "../assets/Portfolio/Slackoff.png";
-import Github from "../assets/github.svg";
 
 const Projects = styled.div`
   padding: 50px 100px 100px 100px;
@@ -42,76 +41,70 @@ const Header = styled.div`
 `;
 
 const ProjectCard = styled.div`
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(12, 1fr);
+  display: flex;
+  width: 500px;
   align-items: center;
   vertical-align: middle;
+  margin: 10px;
+
 `;
 
 const ProjectImage = styled(Image)`
+  border-radius: 10px 10px 0 0;
   width: 500px;
-  border-radius: 10px;
+  align-self: flex-start;
+  height: 75%;
+  object-fit: cover;
+`;
+
+const ProjectTechnologies = styled.div`
+  display: flex;
+  font-size: 10px;
+  flex-direction: row;
+`;
+
+const Outline = styled.div`
+  border: 0.5px solid #2fbf71;
+  box-sizing: border-box;
+  margin-right: 5px;
+  border-radius: 13px;
+  padding: 3px 10px;
+  align-items: center;
 `;
 
 const ProjectTitle = styled.h5`
-  font-size: 24px;
-  padding: 20px 0px;
+  font-size: 18px;
   font-weight: 600;
 `;
 
 const ProjectDetails = styled.div`
-  position: relative;
-  z-index: 2;
-  padding: 25px;
-  background-color: white;
-  box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  align-self: flex-end;
+  border-radius: 0 0 10px 10px;
+  padding: 20px 20px;
+  width: 500px;
+  background-color: #121212;
 `;
 
-const ProjectTechnology = styled.ul`
-  position: relative;
-  z-index: 2;
+const Seperator = styled.div`
+  height: 0px;
+  width: 30px;
+  border: 1px solid #2fbf71;
+  margin: 8px 0px;
+`;
+
+const ProjectDescription = styled.div`
+  font-size: 15px;
+`;
+
+const ProjectLink = styled.a`
   display: flex;
-  flex-wrap: wrap;
-  padding: 0px 25px;
-  list-style: none;
-
-  li {
-    padding: 30px 0px 0px;
-    margin-right: 7px;
-    font-size: 14px;
-  }
-`;
-
-const ProjectImgContainer = styled.a`
-  grid-column: ${(props) => props.column};
-  grid-row: 1 / -1;
-  position: relative;
-  z-index: 1;
-  border: 40px solid white;
-  box-shadow: 0px 15px 20px 5px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  color: #f7f9f9;
+  text-decoration: none;
 
   :hover {
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -o-transform: scale(1.05);
-    transform: scale(1.05);
-  }
-`;
-
-const ProjectLinks = styled.div`
-  padding: 0px 25px;
-  position: relative;
-
-  img {
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-
-    :hover {
-    }
+    color: #f7f9f9;
   }
 `;
 
@@ -119,13 +112,17 @@ const ProjectsInfo = [
   {
     name: "Foodture",
     technologies: ["Node.js", "Golang", "PostgreSQL"],
-    description: "",
-    logo: "",
+    link: "",
+    description:
+      "Foodture allows users to post information about close to expiration items at their local supermarkets.",
+    logo: Foodture,
   },
   {
-    name: "Slackoff",
-    technologies: ["Node.js"],
-    description: "",
+    name: "SlackOff",
+    technologies: ["Node.js", "Twilio API"],
+    link: "https://github.com/nicholasc861/Slackoff",
+    description:
+      "SlackOff allows for users to communicate on Slack using SMS allowing offline members to stay updated",
     logo: SlackOff,
   },
 ];
@@ -148,11 +145,23 @@ const ProjectSection = () => {
     <Projects id="projects">
       <Header>My Projects</Header>
       <Container>
-        <Row>
+        <Row style={{ "justify-content": "space-evenly" }}>
           {ProjectsInfo.map((project, index) => (
-            <ProjectCard>
-              <ProjectImage src={project.logo} />
-            </ProjectCard>
+            <ProjectLink href={project.link} target="_blank" rel="no-referrer" key={index}>
+              <ProjectCard>
+                <ProjectImage src={project.logo} />
+                <ProjectDetails>
+                  <ProjectTitle>{project.name}</ProjectTitle>
+                  <ProjectTechnologies>
+                    {project.technologies.map((technology, index) => (
+                      <Outline key={index}>{technology}</Outline>
+                    ))}
+                  </ProjectTechnologies>
+                  <Seperator />
+                  <ProjectDescription>{project.description}</ProjectDescription>
+                </ProjectDetails>
+              </ProjectCard>
+            </ProjectLink>
           ))}
         </Row>
       </Container>

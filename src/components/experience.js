@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { scrollreveal, srBottomConfig } from "../utils/scrollreveal";
-import theme from "../styles/theme";
 
 import LocationPin from "../assets/pin.svg";
 import Calendar from "../assets/calendar.svg";
@@ -155,15 +154,15 @@ const ExperienceDetails = styled.div`
 `;
 
 const Experiences = [
-  {
-    title: "Software Engineering Intern",
-    company: "Candor",
-    website: "https://candor.co",
-    time: "April 2021 - Present",
-    location: "Remote / San Francisco, CA",
-    logo: "",
-    job_details: [],
-  },
+  // {
+  //   title: "Software Engineering Intern",
+  //   company: "Candor",
+  //   website: "https://candor.co",
+  //   time: "April 2021 - Present",
+  //   location: "Remote / San Francisco, CA",
+  //   logo: "",
+  //   job_details: [],
+  // },
   {
     title: "Junior Software Developer Intern",
     company: "CondoWorks",
@@ -173,7 +172,7 @@ const Experiences = [
     logo: "",
     job_details: [
       `Designing, building, and maintaining 10+ scrapers and parsers in Node.js using Puppeteer which is
-      processing over 500 vendor bills weekly while ensuring that data is gathered ethically`,
+      processing over 500 vendor bills weekly`,
       `Performing daily maintenance by identifying root issues on scrapers and parsers to ensure that
       problems are addressed quickly and efficiently`,
       `Optimizing integrations infrastructure by over 45% by creating consistent standards for future
@@ -196,6 +195,21 @@ const Experiences = [
     provide consistent data`,
     ],
   },
+  {
+    title: "Summer Camp Counselor",
+    company: "City of Richmond Hill",
+    website: "https://www.richmondhill.ca/en/index.aspx",
+    time: "June 2018 - August 2019",
+    location: "Richmond Hill, ON",
+    logo: "",
+    job_details: [
+      `Demonstrated the ability to build strong relationships with campers, parents, and other staff`,
+      `Developed problem-solving skills through the need to implement and adapt various activities to
+      maintain a fun and inclusive atmopshere for all campers`,
+      `Implemented daily lesson plans to instruct badminton, archery, and leadership skills to campers
+      `,
+    ],
+  }
 ];
 
 const ExperienceSection = () => {
