@@ -133,13 +133,13 @@ const ContactSection = () => {
                 <div style={{ color: "#2fbf71" }}>—</div>
               </h1>
               <h2>General Inquiries</h2>
-              <a href="contact@nicholaschunghun.com" target="_top">
+              <a href="mailto:contact@nicholaschunghun.com" target="_top">
                 contact@nicholaschunghun.com
               </a>
               <br />
               <br />
               <h2>Internship Opportunities</h2>
-              <a href="intern@nicholaschunghun.com" target="_top">
+              <a href="mailto:intern@nicholaschunghun.com" target="_top">
                 intern@nicholaschunghun.com
               </a>
             </Section>
