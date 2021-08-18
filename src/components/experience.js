@@ -175,11 +175,9 @@ const Experiences = [
     location: "Remote / Richmond Hill, ON",
     logo: "",
     job_details: [
-      `Designed, built, and maintained 10+ scrapers and parsers in Node.js using Puppeteer which is
-      processing over 500+ vendor bills weekly`,
+      `Productionized and maintained 15+ scrapers and parsers in Node.js using Puppeteer processing 500+ vendor invoices weekly`,
       `Optimized parsing accuracy by over 50% by spearheading a test suite that would determine improvements and diminishments after making changes to OCR logic`,
-      `Optimized integrations infrastructure by over 45% by creating consistent standards for future
-      development`,
+      `Performed daily maintenance by monitoring scrapers and parsers reducing daily failure rate by 30%      `,
     ],
   },
   {
@@ -194,8 +192,6 @@ const Experiences = [
     increased efficiency by 50%`,
       `Developed a web application using React.js and Express.js to provide contextual information to guide
     clients and employees on where to obtain support`,
-      `Overhauled error handling and reporting to ensure that generated reports for employees would
-    provide consistent data`,
     ],
   },
   {
