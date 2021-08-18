@@ -154,15 +154,19 @@ const ExperienceDetails = styled.div`
 `;
 
 const Experiences = [
-  // {
-  //   title: "Software Engineering Intern",
-  //   company: "Candor",
-  //   website: "https://candor.co",
-  //   time: "April 2021 - Present",
-  //   location: "Remote / San Francisco, CA",
-  //   logo: "",
-  //   job_details: [],
-  // },
+  {
+    title: "Software Engineering Intern",
+    company: "Candor",
+    website: "https://candor.co",
+    time: "April 2021 - Present",
+    location: "Remote / San Francisco, CA",
+    logo: "",
+    job_details: [
+      `Engineered and implemented 10+ scalable Node.js AWS Lambda functions conducting scheduled stock trading, automated portfolio investing and other core fintech logic with unit and end-to-end testing coverage`,
+      `Securely implemented full account liquidation, ACH transfer requests and retrieval of financial information through a RESTful API performing PostgreSQL queries and external API requests to Plaid and Apex Clearing`,
+      `Spearheaded key infrastructure documentation aiding current and future team members to understand the codebase`,
+    ],
+  },
   {
     title: "Junior Software Developer Intern",
     company: "CondoWorks",
@@ -171,11 +175,10 @@ const Experiences = [
     location: "Remote / Richmond Hill, ON",
     logo: "",
     job_details: [
-      `Designing, building, and maintaining 10+ scrapers and parsers in Node.js using Puppeteer which is
-      processing over 500 vendor bills weekly`,
-      `Performing daily maintenance by identifying root issues on scrapers and parsers to ensure that
-      problems are addressed quickly and efficiently`,
-      `Optimizing integrations infrastructure by over 45% by creating consistent standards for future
+      `Designed, built, and maintained 10+ scrapers and parsers in Node.js using Puppeteer which is
+      processing over 500+ vendor bills weekly`,
+      `Optimized parsing accuracy by over 50% by spearheading a test suite that would determine improvements and diminishments after making changes to OCR logic`,
+      `Optimized integrations infrastructure by over 45% by creating consistent standards for future
       development`,
     ],
   },
@@ -188,7 +191,7 @@ const Experiences = [
     logo: "",
     job_details: [
       `Coordinated development of an information radiator deployed to sites globally using scripts that
-    increased efficiency by 100%`,
+    increased efficiency by 50%`,
       `Developed a web application using React.js and Express.js to provide contextual information to guide
     clients and employees on where to obtain support`,
       `Overhauled error handling and reporting to ensure that generated reports for employees would
@@ -209,7 +212,7 @@ const Experiences = [
       `Implemented daily lesson plans to instruct badminton, archery, and leadership skills to campers
       `,
     ],
-  }
+  },
 ];
 
 const ExperienceSection = () => {
