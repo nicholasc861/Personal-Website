@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Transition } from "react-transition-group";
-import TextLoop from "react-text-loop";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
 import styled from "styled-components";
@@ -147,7 +145,7 @@ const Hero = () => {
                     <Icon src={Linkedin} />
                   </IconRing>
                 </a>
-                <a href="" target="_blank" rel="noreferrer">
+                <a href="/" target="_blank" rel="noreferrer">
                   <IconRing>
                     <Icon src={Resume} />
                   </IconRing>

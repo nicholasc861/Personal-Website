@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Container, Col, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { scrollreveal, srBottomConfig } from "../utils/scrollreveal";
 
 import styled from "styled-components";
@@ -59,28 +59,23 @@ const Seperator = styled.div`
 
 const ContactSection = () => {
   const reveal1 = useRef(null);
-  const reveal2 = useRef(null);
-  const reveal3 = useRef(null);
-  const reveal4 = useRef(null);
 
   useEffect(() => {
     scrollreveal.reveal(reveal1.current, srBottomConfig());
-    scrollreveal.reveal(reveal2.current, srBottomConfig());
-    scrollreveal.reveal(reveal3.current, srBottomConfig());
-    scrollreveal.reveal(reveal4.current, srBottomConfig());
-  });
+  }, []);
 
   return (
-    <Contact id="contact">
+    <Contact ref={reveal1} id="contact">
       <Container>
         <Section>
-        Get in touch at <a href="mailto:contact@nicholaschunghun.com">contact@nicholaschunghun.com</a>
+          Get in touch at{" "}
+          <a href="mailto:contact@nicholaschunghun.com">
+            contact@nicholaschunghun.com
+          </a>
         </Section>
       </Container>
       <Seperator />
-      <Copyright ref={reveal4}>
-        Developed by Nicholas Chung-Hun © 2021
-      </Copyright>
+      <Copyright>Developed by Nicholas Chung-Hun © 2021</Copyright>
     </Contact>
   );
 };
